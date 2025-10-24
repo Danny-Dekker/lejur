@@ -9,10 +9,9 @@ from dotenv import load_dotenv
 
 # Project root: .../lejur-api
 ROOT_DIR = Path(__file__).resolve().parents[1]
-# Make sure 'app' is importable
 sys.path.insert(0, str(ROOT_DIR))
 
-# Load .env from project root
+# Load .env
 load_dotenv(ROOT_DIR / ".env")
 
 config = context.config
@@ -26,7 +25,7 @@ from app.models import Base  # noqa: E402
 
 target_metadata = Base.metadata
 
-# Pull DB URL from env and inject into Alembic
+# Inject DB URL
 db_url = os.getenv("DATABASE_URL")
 if not db_url:
     raise RuntimeError("DATABASE_URL not set in .env")

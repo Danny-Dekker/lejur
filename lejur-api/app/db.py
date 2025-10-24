@@ -1,15 +1,13 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
 
-# Load .env from the project root (lejur-api/.env)
 ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
 load_dotenv(dotenv_path=ENV_PATH)
 
 DATABASE_URL = os.getenv("DATABASE_URL")
-
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL not set")
 

@@ -7,20 +7,20 @@ __pycache__/
 
 # Virtual env
 venv/
-env/
 .venv/
+env/
 
-# Environment variables
+# Env and secrets
 .env
 
-# Alembic
+# Alembic junk
 migrations/versions/__pycache__/
 alembic.ini.bak
 
 # Logs
 *.log
 
-# Mac crap
+# macOS
 .DS_Store
 
 # IDEs
